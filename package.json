@@ -16,5 +16,11 @@
   "bugs": {
     "url": "https://github.com/amyhaerr/LiriBot/issues"
   },
-  "homepage": "https://github.com/amyhaerr/LiriBot#readme"
+  "homepage": "https://github.com/amyhaerr/LiriBot#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "bandsintown": "^1.0.1",
+    "omdb": "^0.8.0",
+    "spotify": "^0.3.0"
+  }
 }
