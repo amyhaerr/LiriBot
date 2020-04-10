@@ -47,6 +47,7 @@ function concert() {
             console.log (`\nVenue Name: ${response.data[i].venue.name}\nVenue Location: ${response.data[i].venue.city}, ${response.data[i].venue.country},\nEvent date and time: ${moment(response.data[i].datetime).format("MM-DD-YYYY LT")}`);
         };
     });
+    logCommands (command,input);
 };
 
 // Spotify music function
@@ -63,6 +64,7 @@ function music() {
             console.log(`\nArtist(s): ${data.tracks.items[0].artists[0].name}\nSong Name: ${data.tracks.items[0].name}\nPreview Link: ${data.tracks.items[0].preview_url}\nAlbum: ${data.tracks.items[0].album.name}`);
         };
     });
+    logCommands (command,input);
 };
 
 // Movie(OMDB) Function
@@ -75,25 +77,39 @@ function movie() {
     axios.get(OMDBUrl).then(function(response){
         console.log(`\nTitle: ${response.data.Title}\nYear: ${response.data.Year}\nIMDB Rating: ${response.data.imdbRating}\nRotten Tomatoes Rating: ${response.data.Ratings[1].Value}\nCountry: ${response.data.Country}\nLanguage: ${response.data.Language}\nPlot: ${response.data.Plot}\nActors: ${response.data.Actors}`)
     });
+    logCommands (command,input);
 };
 
 // Random.text function
 function random() {
-    fs.readFile("random.text", "utf8", function(err, data){
+    fs.readFile("random.txt", "utf8", function(err, data){
         if (err) {
             return console.log(err);
         };
 
-        var dataArr = data.split(", ");
-        if (dataArr[0] === 'spotify-this-song') {
+        var dataArr = data.split(",");
+        if (dataArr[0] === "spotify-this-song") {
             input = dataArr[1];
             music();
-        } else if (dataArr[0] === 'concert-this') {
+        } else if (dataArr[0] === "concert-this") {
             input = dataArr[1];
             concert();
+        } else if (dataArr[0] === "movie-this") {
+            input = dataArr[1];
+            movie();
+        }else {
+            console.log(`Uh oh! You need to tell me what to do!`)
+        }   
+              
+    });
+}
+function logCommands (command, input) {
+    fs.appendFile("log.txt", `${command}, ${input}`, function(err){
+        if (err) {
+            console.log(err)
         }
-
-
-        
+        else {
+            console.log(`\nThe command ${command} was logged.\nThe input ${input} was also logged.\n`);
+        }
     });
 }
