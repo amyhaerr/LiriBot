@@ -43,6 +43,10 @@ function concert() {
 
     axios
         .get(concertUrl).then(function (repsonse) {
-            console.log(response.data);
+            
+        
+            for (var i=0 ; i < response.length; i++) {
+
+            }
         });
 }
