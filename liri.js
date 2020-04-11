@@ -41,13 +41,13 @@ function concert() {
     var concertURL = `https://rest.bandsintown.com/artists/${input}/events?app_id=codingbootcamp`;
 
     axios.get(concertURL).then(function (response) {
-        
+
         // Venue Information
         for (var i = 0; i < response.data.length; i++) {
-            console.log (`\nVenue Name: ${response.data[i].venue.name}\nVenue Location: ${response.data[i].venue.city}, ${response.data[i].venue.country},\nEvent date and time: ${moment(response.data[i].datetime).format("MM-DD-YYYY LT")}`);
+            console.log(`\nVenue Name: ${response.data[i].venue.name}\nVenue Location: ${response.data[i].venue.city}, ${response.data[i].venue.country},\nEvent date and time: ${moment(response.data[i].datetime).format("MM-DD-YYYY LT")}`);
         };
     });
-    logCommands (command,input);
+    logCommands(command, input);
 };
 
 // Spotify music function
@@ -57,14 +57,14 @@ function music() {
     }
 
     spotify
-    .search ({ type: 'track', query: input, limit: 1 }, function(err, data){
-        if (err) {
-            console.log(`an error occured: ${err}`);
-        } else {
-            console.log(`\nArtist(s): ${data.tracks.items[0].artists[0].name}\nSong Name: ${data.tracks.items[0].name}\nPreview Link: ${data.tracks.items[0].preview_url}\nAlbum: ${data.tracks.items[0].album.name}`);
-        };
-    });
-    logCommands (command,input);
+        .search({ type: 'track', query: input, limit: 1 }, function (err, data) {
+            if (err) {
+                console.log(`an error occured: ${err}`);
+            } else {
+                console.log(`\nArtist(s): ${data.tracks.items[0].artists[0].name}\nSong Name: ${data.tracks.items[0].name}\nPreview Link: ${data.tracks.items[0].preview_url}\nAlbum: ${data.tracks.items[0].album.name}`);
+            };
+        });
+    logCommands(command, input);
 };
 
 // Movie(OMDB) Function
@@ -74,15 +74,15 @@ function movie() {
     };
     var OMDBUrl = `http://www.omdbapi.com/?t=${input}&y=&plot=short&apikey=trilogy`;
 
-    axios.get(OMDBUrl).then(function(response){
+    axios.get(OMDBUrl).then(function (response) {
         console.log(`\nTitle: ${response.data.Title}\nYear: ${response.data.Year}\nIMDB Rating: ${response.data.imdbRating}\nRotten Tomatoes Rating: ${response.data.Ratings[1].Value}\nCountry: ${response.data.Country}\nLanguage: ${response.data.Language}\nPlot: ${response.data.Plot}\nActors: ${response.data.Actors}`)
     });
-    logCommands (command,input);
+    logCommands(command, input);
 };
 
 // Random.text function
 function random() {
-    fs.readFile("random.txt", "utf8", function(err, data){
+    fs.readFile("random.txt", "utf8", function (err, data) {
         if (err) {
             return console.log(err);
         };
@@ -97,14 +97,14 @@ function random() {
         } else if (dataArr[0] === "movie-this") {
             input = dataArr[1];
             movie();
-        }else {
+        } else {
             console.log(`Uh oh! You need to tell me what to do!`)
-        }   
-              
+        }
+
     });
 }
-function logCommands (command, input) {
-    fs.appendFile("log.txt", `${command}, ${input}`, function(err){
+function logCommands(command, input) {
+    fs.appendFile("log.txt", `${command}, ${input}`, function (err) {
         if (err) {
             console.log(err)
         }
