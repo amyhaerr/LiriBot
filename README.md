@@ -21,12 +21,19 @@ https://github.com/jenross/liri-bot/blob/master/README.md
 <img src="./images/first.png">
 
 
-2. Next, type the command below onto the terminal/bash window to see the upcoming concert locations and dates for a specified artist.
+2. Next, type the command below onto the terminal/bash window to see the upcoming concert locations and dates for a specified artist:
 
         node liri concert-this <name of band/artist>
 
 
-3. 
+3. Thirdly, type the command below to see a song on Spotify associated with your search:
+
+         node liri spotify-this-song <name of song>
+
+
+4. Then, type the command below to see information pulled from the OMDB API about a specific movie:
+
+        node liri movie-this <name of movie>    
 
 ## Technologies Used:
 1. JavaScript
