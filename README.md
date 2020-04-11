@@ -24,16 +24,33 @@ https://github.com/jenross/liri-bot/blob/master/README.md
 2. Next, type the command below onto the terminal/bash window to see the upcoming concert locations and dates for a specified artist:
 
         node liri concert-this <name of band/artist>
+<img src="./images/second.png">
 
-
-3. Thirdly, type the command below to see a song on Spotify associated with your search:
+3. Thirdly, type the command below to see a song on Spotify associated with your search (if no song is typed, a default song of 'Chupando' will be displayed):
 
          node liri spotify-this-song <name of song>
+<img src="./images/third.png">
 
+<img src="./images/thirdb.png">
 
-4. Then, type the command below to see information pulled from the OMDB API about a specific movie:
+4. Then, type the command below to see information pulled from the OMDB API about a specific movie(if no movie is entered, a default of 'Shaun of the Dead' will populate):
 
         node liri movie-this <name of movie>    
+<img src="./images/fourth.png">
+
+<img src="./images/fourthb.png">
+
+5. When type the command below, the program will read the random.txt file and run the command and search for its content:
+
+        node liri do-what-it-says
+
+<img src="./images/fifth.png">
+
+6. Finally, when you type the information for concerts, artists, or movies, it will log into a file called log.txt:
+
+<img src="./images/sixth.png">
+
+
 
 ## Technologies Used:
 1. JavaScript
