@@ -1,1 +1,7 @@
-concert-this, Aurelio Voltairespotify-this-song, Chupandospotify-this-song, Chupandospotify-this-song, In the Endmovie-this, Shaun of the Deadmovie-this, The Gooniesdo-what-it-says, "I Want it That Way"
+
+concert-this, Aurelio Voltaire
+spotify-this-song, Chupando
+spotify-this-song, In the End
+movie-this, Shaun of the Dead
+movie-this, The Goonies
+do-what-it-says, "I Want it That Way"

@@ -1,6 +1,6 @@
 # LiriBot
 
-https://github.com/jenross/liri-bot/blob/master/README.md
+
 
 ## Problem:
 
@@ -15,6 +15,7 @@ https://github.com/jenross/liri-bot/blob/master/README.md
     - Music
     - Movie
     - Do what it says
+- Each section is labeled appropriately
 
 ## Instructions on how to run the App:
 1. First, open up your terminal/bash window and navigate to the folder for liri-bot where the file liri.js is stored.

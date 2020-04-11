@@ -104,7 +104,7 @@ function random() {
     });
 }
 function logCommands(command, input) {
-    fs.appendFile("log.txt", `${command}, ${input}`, function (err) {
+    fs.appendFile("log.txt", `\n${command}, ${input}`, function (err) {
         if (err) {
             console.log(err)
         }
